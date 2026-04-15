@@ -1,0 +1,40 @@
+# Logs
+*.log
+
+# Dependencies
+node_modules/
+venv/
+.venv/
+__pycache__/
+target/
+.mvn/
+
+# Build artifacts
+dist/
+build/
+*.jar
+*.war
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+
+# Project specific
+backend/target/
+frontend/node_modules/
+frontend/dist/
+ai-service/venv/
+ai-service/__pycache__/
+ai-service/ai_service.log
+frontend/frontend_dev.log
+backend/backend_run.log
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo

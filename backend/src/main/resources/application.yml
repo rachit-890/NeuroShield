@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: secure-api
+  datasource:
+    url: ${DB_URL:jdbc:h2:mem:secure_api_db;DB_CLOSE_DELAY=-1;MODE=PostgreSQL}
+    username: ${DB_USER:sa}
+    password: ${DB_PASS:}
+    driver-class-name: ${DB_DRIVER:org.h2.Driver}
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  data:
+    redis:
+       host: ${REDIS_HOST:localhost}
+       port: ${REDIS_PORT:6379}
+       password: ${REDIS_PASS:}
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: ${DB_DIALECT:org.hibernate.dialect.H2Dialect}
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+jwt:
+  secret: ${JWT_SECRET:averylongsecretkeyforjwtsignatureusinghs256algorithmthatisatleast256bitslong}
+  expiration: ${JWT_EXPIRATION:900000} # 15 minutes
+  refresh-expiration: ${JWT_REFRESH_EXPIRATION:604800000} # 7 days
+
+app:
+  encryption-key: ${APP_ENCRYPTION_KEY:averylongsecretkeyforaesencryption}
+  ai-service:
+    url: ${AI_SERVICE_URL:http://localhost:8000}
