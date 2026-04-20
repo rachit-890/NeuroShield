@@ -64,7 +64,7 @@ cd NeuroShield
 docker-compose up --build
 ```
 
-### Accessing the Platform
+### Accessing the Platform-
 - **Frontend**: `http://localhost:80` (or `http://localhost:5173` if running locally)
 - **Backend API**: `http://localhost:8080/api`
 - **AI Service**: `http://localhost:8000`
